@@ -31,11 +31,15 @@ def count_words(text):
 
 
 def main():
-    file_path = "books/frankenstein.txt"
-    with open(file_path) as f:
-        file_contents = f.read()
-    
-    print_report(file_path, file_contents)
+    print("Enter the file path to the book: ")
+    file_path = input()
+    # file_path = "books/frankenstein.txt"
+    try:
+        with open(file_path) as f:
+            file_contents = f.read()
+            print_report(file_path, file_contents)
+    except FileNotFoundError:
+        print(f"Error: {file_path} is not a valid file path")
     
 
 
